@@ -1,0 +1,110 @@
+---
+title: "FDS"
+author: "20MDT102 ASHWIN SARATH"
+date: "18/11/2020"
+output: html_document
+---
+
+DATA SET: USOIL EXPENDITURE
+This is a data set with some missing values where it contains production,consumer price index,expenditure and oil (in galloons) that is been wasted
+
+Here loading the data set
+```{r}
+f<-read.csv(file.choose())
+```
+#1
+Now for the data set we took, we will have a glimpse of whats there in the data set.We will simplpy do a summary here. Lets the dimension of the data set also
+
+```{r}
+summary(f)
+fBasics::basicStats(f)
+dim(f)
+```
+#2
+Okay. Looks like we some values missing. We need to clean it up
+and now lets look at the summary
+
+```{r}
+c<-na.omit(f)
+summary(c)
+dim(c)
+
+```
+#3
+Now, lets replace the mean value in the missed values in the original data set
+Here oil and expenditure has some missing values so we replace with the mean value of the originl data set
+```{r}
+f$oil[is.na(f$oil)]<-mean(f$oil,na.rm=TRUE)
+f$expenditure[is.na(f$expenditure)]<-mean(f$expenditure,na.rm = TRUE)
+
+```
+#4
+Now lets do a scatter plot and we will have a look at the values how they are spaced out
+
+```{r}
+plot(f$expenditure,f$production,xlab="Expenditure",ylab="Production",xlim=c(60,100),ylim=c(60,100))
+
+```
+#5
+Here lets try to find a regression line and plot itPlotting regression line is easy. Lets do that first.
+```{r}
+plot(f$expenditure,f$production,xlab="Expenditure",ylab="Production",xlim=c(60,100),ylim=c(60,100))
+
+reg1 <- lm(f$expenditure~f$production) 
+abline(reg1)
+
+```
+#6 NOTE:The regression line is in the code.
+Now lets predict the values for expenditure say 25 (within range) adn 110 (outisde the range)
+```{r}
+x<-coef(reg1)[2]
+a<-coef(reg1)[1]
+
+print(a)
+print(x)
+
+x1=25
+#regression line
+y1=a+x*x1
+print(y1)
+
+x2=110
+#regression line
+y2=a+x*x2
+print(y2)
+
+```
+#7
+Now lets do a pca 
+def of pca:
+The principal components of a collection of points in a real p-space are a sequence of p direction vectors, where the i t h  vector is the direction of a line that best fits the data while being orthogonal to the first i − 1  i-1 vectors. Here, a best-fitting line is defined as one that minimizes the average squared distance from the points to the line. These directions constitute an orthonormal basis in which different individual dimensions of the data are linearly uncorrelated
+```{r}
+pca_f=prcomp(f[,c(2:5)],center = T,scale. = T)
+summary(pca_f)$importance[2,]
+
+```
+#8
+k means clustering
+why we do k means clustering?
+The K-means clustering algorithm is used to find groups which have not been explicitly labeled in the data. This can be used to confirm  assumptions about what types of groups exist or to identify unknown groups in complex data sets. 
+
+#9
+SSE as a measure to find the best clustering solution from the solutions obtained in task 8
+above.
+To measure the variation within the cluster, we can actually print along with k-clustering task
+```{r}
+set.seed(139)
+for (val in seq(1:3)){
+  km=(kmeans(f[,2:5],val,iter.max = 10,nstart = 50))
+  print(km)
+  sse.km<-(km$withinss)
+  print("Respective sse for K ")
+  print(sse.km)
+ 
+}
+```
+
+
+
+
+
