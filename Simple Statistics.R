@@ -1,4 +1,4 @@
-'            LAB EX 4              '
+
 '
 1. Generate random numbers from X~Binom(n=8,p=0.5). 
 Also generate samples of size 1000 from Binomial(n=8,p1=0.5) distribution
@@ -20,7 +20,7 @@ print(p1)
 
 
 
-'              LAB EX 5                 '
+
 
 '1.In a certain city district, the need for money to buy drugs is stated 
 as the reason for 75% of all thefts. 
@@ -84,7 +84,7 @@ legend("topright", c("Observed frequency","Expected frequency of Binomial"), pch
 
 
 
-'              LAB EX 6                 '
+
 '1.The following mistakes per page were observed in a book
 MISTAKES   : 0    1  2 3 4
 NO.OF.PAGES: 211 90 19 5 0
@@ -137,7 +137,7 @@ print(atleast_2_accidents)
 
 
 
-'              LAB EX 7                 '
+
 
 '1.The daily amount of coffee, in liters, dispensed by a machine located in an 
 airport lobby is a random variable X having a continuous uniform distribution 
