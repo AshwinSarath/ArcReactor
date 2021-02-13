@@ -1,2 +1,2 @@
-# ArcReactor
-BEGINNINER
+# R
+Working with R Language 
