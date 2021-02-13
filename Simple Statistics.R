@@ -18,7 +18,7 @@ print(p)
 p1<-rpois(x1,4)
 print(p1)
 
-
+#############################################################################3
 
 
 
@@ -81,7 +81,7 @@ legend("topright", c("Observed frequency","Expected frequency of Binomial"), pch
 
 
 
-
+##################################################################
 
 
 
@@ -136,7 +136,7 @@ print(atleast_2_accidents)
 
 
 
-
+#################################################################################
 
 
 '1.The daily amount of coffee, in liters, dispensed by a machine located in an 
