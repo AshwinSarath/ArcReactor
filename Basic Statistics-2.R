@@ -1,4 +1,4 @@
-'              LAB EX 8             '
+
 
 '1.The length of time for one individual to be served at a 
 cafeteria is a random variable having an exponential distribution
@@ -57,8 +57,7 @@ qqcomp(fexp,legendtext = plot.legend)
 cdfcomp(fexp,legendtext = plot.legend)
 ppcomp(fexp,legendtext = plot.legend)
 
-       
-'         LAB EX 9      '
+
 '1.If a random variable X has the gamma distribution 
 with ?? = 2 and ?? = 1, find P(1.8 <X< 2.4).'
 
@@ -91,7 +90,6 @@ qqcomp(fgam,legendtext = plot.legend)
 cdfcomp(fgam,legendtext = plot.legend)
 ppcomp(fgam,legendtext = plot.legend)
 
-'    LAB EX 10    '
 '1.Suppose the random variable X follows a beta distribution with ?? = 1 and ?? = 3.
 Find ????(????>1/3)'
 
