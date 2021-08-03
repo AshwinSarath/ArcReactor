@@ -1,0 +1,47 @@
+R  experiments:
+#matrix printing:
+m=matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3)
+print(m)
+l=t(m)
+print(l)
+
+
+#along with  co-ordinates
+T=matrix(c(1,2,3,4,5,6),nrow=2,ncol=3,byrow=TRUE,dimnames=list(c("a","b"),c("x","y","z")))
+print(T)
+print(class(T))
+
+#dimension
+L<-array(c(1,2,3),dim=c(3,3,2))
+print(L)
+
+
+#with cateogogrical 
+Q=factor(c("sin","marr","stat","quo"));
+print(levels(Q))
+print("h")
+print(Q[c(2,4)])
+print("##")
+print(Q[-1])
+print("@@@")
+print(Q[c(TRUE,FALSE,FALSE,TRUE)])
+
+################################################
+#data frame:
+serial=c(1,2,3)
+name=c("ash","win","sart")
+age=c(21,23,34)
+d=data.frame(serial,name,age)
+print(d)
+typeof(d)
+class(d)
+#on data frames
+print("#####")
+names(d)
+ncol(d)
+nrow(d)
+length(d)
+str(d)#structure of the list
+
+
+
